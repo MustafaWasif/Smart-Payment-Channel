@@ -5,6 +5,7 @@
 pragma solidity ^0.8.9;
 
 import "hardhat/console.sol";
+
 // This is the main building block for smart contracts.
 contract SimplePaymentChannel {
     address public sender;     // The account sending payments.
