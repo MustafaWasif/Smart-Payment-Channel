@@ -20,7 +20,7 @@ contract SimplePaymentChannel {
     {
         require(msg.sender != _recipient, "Contract deployer needs to be sender");
         require(_closeDuration > 100, "Please provide enough time for recipient to close account"); // Could be some time that is agreed between sender and receiver 
-        require(msg.value > 0, "Please setup contract with some funds.");
+        // require(msg.value > 0, "Please setup contract with some funds.");
         sender = payable(msg.sender);
         recipient = payable(_recipient);
         closeDuration = _closeDuration;
@@ -89,7 +89,7 @@ contract SimplePaymentChannel {
     }
     
     function isValidSignature(uint256 _amount, bytes memory _signature)
-        internal //public
+        public
         view
         returns (bool)
     {
